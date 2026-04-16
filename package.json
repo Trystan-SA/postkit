@@ -1,6 +1,6 @@
 {
-  "name": "carousel-kit",
-  "version": "0.1.0",
+  "name": "social-carousel-bot-creator",
+  "version": "0.1.1",
   "description": "Generate TikTok, Instagram, and X.com carousels from HTML/CSS — themed, scriptable, Claude-Code-friendly.",
   "type": "module",
   "bin": {
@@ -33,7 +33,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Trystan-SA/carousel-kit.git"
+    "url": "https://github.com/Trystan-SA/social-carousel-bot-creator.git"
   },
   "engines": {
     "node": ">=20"

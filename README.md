@@ -1,14 +1,22 @@
 # Carousel-kit
 
+[![npm version](https://img.shields.io/npm/v/social-carousel-bot-creator.svg)](https://www.npmjs.com/package/social-carousel-bot-creator)
+[![npm downloads](https://img.shields.io/npm/dm/social-carousel-bot-creator.svg)](https://www.npmjs.com/package/social-carousel-bot-creator)
+[![license](https://img.shields.io/npm/l/social-carousel-bot-creator.svg)](https://github.com/Trystan-SA/social-carousel-bot-creator/blob/main/LICENSE)
+[![node](https://img.shields.io/node/v/social-carousel-bot-creator.svg)](https://www.npmjs.com/package/social-carousel-bot-creator)
+[![GitHub stars](https://img.shields.io/github/stars/Trystan-SA/social-carousel-bot-creator?style=social)](https://github.com/Trystan-SA/social-carousel-bot-creator)
+
 **Generate Social media images and carousel for TikTok, Instagram, X.com from HTML/CSS.** Themeable, scriptable, and designed to pair with [Claude Code](https://claude.com/claude-code) for AI-assisted content creation.
 
 ```bash
-npx carousel-kit init
-npx carousel-kit new intro-post --format 9:16
-npx carousel-kit render posts/intro-post
+npx social-carousel-bot-creator init
+npx social-carousel-bot-creator new intro-post --format 9:16
+npx social-carousel-bot-creator render posts/intro-post
 ```
 
 That's it — open `posts/intro-post/output/` and upload the PNGs.
+
+> After a global install the short command `carousel-kit` is available too (`npm i -g social-carousel-bot-creator && carousel-kit render posts/intro-post`).
 
 ## Why carousel-kit?
 
@@ -28,10 +36,12 @@ carousel-kit is the opposite:
 carousel-kit needs **Node 20+** and a Chrome/Chromium binary (Puppeteer downloads one on first install; a system install works too).
 
 ```bash
-npm install -g carousel-kit
+npm install -g social-carousel-bot-creator
 # or run ad-hoc with npx
-npx carousel-kit <command>
+npx social-carousel-bot-creator <command>
 ```
+
+Once installed globally, the CLI binary is `carousel-kit` (shorter to type). The rest of this README uses that short form.
 
 On minimal Linux systems you may also need native libs for Chromium:
 
@@ -45,7 +55,7 @@ Don't want to touch your system? See [Docker](#docker).
 
 ```bash
 mkdir my-brand && cd my-brand
-npx carousel-kit init
+carousel-kit init
 ```
 
 This creates:
@@ -62,20 +72,20 @@ my-brand/
 Create your first post:
 
 ```bash
-npx carousel-kit new my-first-post
+carousel-kit new my-first-post
 ```
 
 Edit the generated HTML in `posts/my-first-post/`, then render:
 
 ```bash
-npx carousel-kit render posts/my-first-post
+carousel-kit render posts/my-first-post
 # → posts/my-first-post/output/slide-1.png ... slide-N.png
 ```
 
 Or iterate with hot-reload:
 
 ```bash
-npx carousel-kit watch posts/my-first-post
+carousel-kit watch posts/my-first-post
 ```
 
 ## Formats
@@ -97,13 +107,13 @@ Set the format per post in `carousel.json`:
 Override on the fly:
 
 ```bash
-npx carousel-kit render posts/my-post --format 1:1
+carousel-kit render posts/my-post --format 1:1
 ```
 
 List them anytime:
 
 ```bash
-npx carousel-kit formats
+carousel-kit formats
 ```
 
 ## Theming

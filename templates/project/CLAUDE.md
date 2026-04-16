@@ -1,6 +1,6 @@
 # Carousel project — Claude Code guide
 
-This project uses [carousel-kit](https://github.com/Trystan-SA/carousel-kit) to render social-media carousels from HTML/CSS. This file tells Claude Code how to help you create posts.
+This project uses [carousel-kit](https://github.com/Trystan-SA/social-carousel-bot-creator) (published on npm as `social-carousel-bot-creator`) to render social-media carousels from HTML/CSS. This file tells Claude Code how to help you create posts.
 
 > **Customize this file.** Replace the placeholder sections below with your real brand, audience, and goals. The richer this doc, the better Claude can draft posts that sound like you.
 

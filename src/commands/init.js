@@ -26,10 +26,12 @@ export async function init({ cwd = process.cwd(), force = false } = {}) {
   const templates = join(PKG_ROOT, "templates", "project");
   const defaultTheme = join(PKG_ROOT, "src", "themes", "default.css");
 
+  // Note: we ship `gitignore` (no dot) because npm strips `.gitignore` from
+  // published packages. `init` renames it on copy.
   const files = [
     [defaultTheme,                          join(target, "theme.css")],
     [join(templates, "CLAUDE.md"),          join(target, "CLAUDE.md")],
-    [join(templates, ".gitignore"),         join(target, ".gitignore")],
+    [join(templates, "gitignore"),          join(target, ".gitignore")],
     [join(templates, "agents", "social-media-strategist.md"), join(target, "agents", "social-media-strategist.md")],
     [join(templates, "agents", "social-media-copywriter.md"), join(target, "agents", "social-media-copywriter.md")],
     [join(templates, "agents", "social-media-designer.md"),   join(target, "agents", "social-media-designer.md")],

@@ -5,8 +5,8 @@ Thanks for considering a contribution! carousel-kit is small and opinionated by 
 ## Dev setup
 
 ```bash
-git clone https://github.com/Trystan-SA/carousel-kit.git
-cd carousel-kit
+git clone https://github.com/Trystan-SA/social-carousel-bot-creator.git
+cd social-carousel-bot-creator
 npm install
 ./bin/carousel-kit.js render examples/quickstart
 ```
