@@ -1,0 +1,45 @@
+{
+  "name": "carousel-kit",
+  "version": "0.1.0",
+  "description": "Generate TikTok, Instagram, and X.com carousels from HTML/CSS — themed, scriptable, Claude-Code-friendly.",
+  "type": "module",
+  "bin": {
+    "carousel-kit": "./bin/carousel-kit.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "templates",
+    "Dockerfile",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "render": "node bin/carousel-kit.js render",
+    "new": "node bin/carousel-kit.js new",
+    "init": "node bin/carousel-kit.js init",
+    "watch": "node bin/carousel-kit.js watch"
+  },
+  "keywords": [
+    "carousel",
+    "tiktok",
+    "instagram",
+    "reels",
+    "social-media",
+    "puppeteer",
+    "html-to-png",
+    "claude-code"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/carousel-kit.git"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "chokidar": "^4.0.1",
+    "puppeteer": "^24.0.0"
+  }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./theme.css">
+  <style>
+    .slide { background: var(--surface); }
+    .pill {
+      display: inline-block;
+      padding: 18px 40px;
+      border-radius: var(--radius-pill);
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--primary);
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 32px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      width: 100%;
+      max-width: 820px;
+    }
+    .feature {
+      background: var(--bg);
+      border-radius: var(--radius-md);
+      padding: 40px 36px;
+      text-align: left;
+    }
+    .feature h3 { font-family: var(--font-display); font-weight: 700; font-size: 40px; color: var(--text); margin-bottom: 12px; }
+    .feature p { font-size: 28px; color: var(--text-muted); line-height: 1.4; }
+    .feature .icon { font-size: 56px; margin-bottom: 20px; display: block; }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="content flex-col gap-48 items-center">
+      <span class="pill">What you get</span>
+      <div class="grid">
+        <div class="feature">
+          <span class="icon">🎨</span>
+          <h3>Themeable</h3>
+          <p>CSS vars for colors, fonts, radii. Override anything.</p>
+        </div>
+        <div class="feature">
+          <span class="icon">📐</span>
+          <h3>Any ratio</h3>
+          <p>9:16, 4:5, 1:1, 16:9 — native export dims.</p>
+        </div>
+        <div class="feature">
+          <span class="icon">⚡</span>
+          <h3>Watch mode</h3>
+          <p>Live reload while you design in HTML.</p>
+        </div>
+        <div class="feature">
+          <span class="icon">🤖</span>
+          <h3>Claude-ready</h3>
+          <p>Built-in agents for strategy, copy, and design review.</p>
+        </div>
+      </div>
+    </div>
+    <span class="watermark">@carousel-kit</span>
+  </div>
+</body>
+</html>

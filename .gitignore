@@ -1,0 +1,22 @@
+node_modules/
+npm-debug.log*
+.DS_Store
+
+# Rendered output
+**/output/
+
+# Personal content — commit nothing here by default
+posts/*
+!posts/.gitkeep
+assets/*
+!assets/.gitkeep
+
+# Personal playbooks
+strategy.md
+CLAUDE.local.md
+.claude/
+
+# Editor / tooling
+.vscode/
+.idea/
+*.swp

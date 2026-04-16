@@ -1,0 +1,14 @@
+node_modules/
+
+# Rendered output
+**/output/
+
+# Local-only
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# Claude Code local state
+.claude/
+CLAUDE.local.md

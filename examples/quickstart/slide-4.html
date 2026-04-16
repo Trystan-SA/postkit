@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./theme.css">
+  <style>
+    .slide {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    }
+    .card {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+    }
+    .cta {
+      display: inline-block;
+      padding: 24px 56px;
+      border-radius: var(--radius-pill);
+      background: var(--accent);
+      color: #0F172A;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 36px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="content flex-col gap-48 items-center">
+      <div class="card flex-col gap-32 items-center" style="max-width: 820px;">
+        <h2 class="heading heading-lg">Try it now</h2>
+        <p class="body body-lg" style="color: var(--text-muted);">
+          <code style="font-size: 34px; background: rgba(255,255,255,0.08); padding: 8px 16px; border-radius: 10px; color: var(--accent);">npx carousel-kit init</code>
+        </p>
+        <span class="cta">Star on GitHub ★</span>
+      </div>
+    </div>
+    <span class="watermark">@carousel-kit</span>
+  </div>
+</body>
+</html>
