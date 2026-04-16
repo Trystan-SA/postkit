@@ -10,24 +10,18 @@ npx carousel-kit render posts/intro-post
 
 That's it — open `posts/intro-post/output/` and upload the PNGs.
 
----
-
 ## Why carousel-kit?
 
 Most social-media carousel tools are locked-in SaaS with rigid templates. If you care about design quality or want your post pipeline in version control, you're stuck.
 
 carousel-kit is the opposite:
 
-- **HTML/CSS is the source of truth** — full control of every pixel.
-- **Theme once, reuse everywhere** — your palette and type live in `theme.css`.
+- **HTML/CSS is the source of truth**, full control of every pixel.
+- **Theme once, reuse everywhere**, your palette and type live in `theme.css`.
 - **Native export dimensions** for every major platform (9:16, 4:5, 1:1, 16:9, 3:4).
 - **Watch mode** for live reload while you design.
-- **Claude-Code-friendly** — optional AI review pipeline (strategist, copywriter, designer).
+- **Claude-Code-friendly**, optional AI review pipeline (strategist, copywriter, designer).
 - **Docker fallback** when you'd rather not install Chrome locally.
-
-Works anywhere Node and headless Chrome run: Mac, Linux, WSL, Docker, CI.
-
----
 
 ## Install
 
@@ -46,8 +40,6 @@ sudo ./setup.sh   # apt-based
 ```
 
 Don't want to touch your system? See [Docker](#docker).
-
----
 
 ## Quickstart
 
@@ -86,8 +78,6 @@ Or iterate with hot-reload:
 npx carousel-kit watch posts/my-first-post
 ```
 
----
-
 ## Formats
 
 Set the format per post in `carousel.json`:
@@ -116,8 +106,6 @@ List them anytime:
 npx carousel-kit formats
 ```
 
----
-
 ## Theming
 
 Everything visual is driven by CSS custom properties in `theme.css` at your project root:
@@ -135,8 +123,6 @@ Everything visual is driven by CSS custom properties in `theme.css` at your proj
 
 Slides link to `../../theme.css` and can layer per-slide overrides in a `<style>` block. See [`examples/quickstart/`](examples/quickstart/) for a complete dark-mode theme.
 
----
-
 ## AI review (optional)
 
 carousel-kit ships three Claude Code sub-agents that review your drafts sequentially:
@@ -149,8 +135,6 @@ Each returns HIGH / MEDIUM / LOW findings. You apply HIGH impact items; the rest
 
 Not a Claude Code user? The agents are plain Markdown specs — the review logic works as prompts with any LLM.
 
----
-
 ## Docker
 
 Prefer not to install Chrome? The repo ships a `Dockerfile` that bakes in everything:
@@ -159,8 +143,6 @@ Prefer not to install Chrome? The repo ships a `Dockerfile` that bakes in everyt
 docker build -t carousel-kit .
 docker run --rm -v "$PWD":/work -w /work carousel-kit render posts/my-post
 ```
-
----
 
 ## CLI reference
 
@@ -173,8 +155,6 @@ carousel-kit formats                       List supported aspect ratios
 carousel-kit version                       Print version
 ```
 
----
-
 ## Roadmap
 
 - [ ] `carousel-kit export` → MP4 / GIF for animated carousels
@@ -184,8 +164,6 @@ carousel-kit version                       Print version
 - [ ] Figma import
 
 Have an idea? Open an issue.
-
----
 
 ## Contributing
 
