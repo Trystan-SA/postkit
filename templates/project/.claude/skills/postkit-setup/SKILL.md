@@ -24,7 +24,7 @@ each topic; use type `project`):
 | `brand_goals.md`      | Primary outcome, primary + secondary platforms, posting frequency |
 | `brand_voice.md`      | 3 adjectives, do's, don'ts, signature phrases and rituals   |
 | `brand_visual.md`     | Brand colors (hex), typography, aesthetic keywords, watermark default |
-| `brand_hooks.md`      | Hook formulas, engagement triggers, off-limits topics       |
+| `brand_hooks.md`      | Hook formulas and off-limits topics                         |
 
 Add each file's pointer to `MEMORY.md` as you create it, following the standard
 memory frontmatter (`name`, `description`, `type: project`).
@@ -119,14 +119,15 @@ reference examples you can adapt. Destination memory file in `[brackets]`.
    _Examples:_ `#0F172A primary, #F59E0B accent, off-white bg` · `Inter for
    headings, Caveat for accents` · `minimal, editorial, high-contrast` ·
    `@somanyways`.
-6. **Hooks, engagement, and off-limits** `[brand_hooks.md]` — one per turn:
-   (a) 3–5 hook formulas the user likes when *they* scroll, (b) which of
-   save / comment / share they most want, (c) topics, claims, or framings to
-   avoid.
+6. **Hooks and off-limits** `[brand_hooks.md]` — one per turn:
+   (a) 3–5 hook formulas the user likes when *they* scroll, (b) topics,
+   claims, or framings to avoid.
+   (Don't ask about save / comment / share / follow priority here — the
+   primary outcome in step 3 already captures which action the user wants
+   viewers to take.)
    _Examples:_ `specific numbers ("I saved 4,200€ in 6 months")`, `personal
-   failures`, `myth-busts`, `hot takes` · `save — my stuff is reference
-   material` / `comment — I want conversations` · `no specific stock picks
-   (legal)`, `no before/after body photos`, `don't roast competitors by name`.
+   failures`, `myth-busts`, `hot takes` · `no specific stock picks (legal)`,
+   `no before/after body photos`, `don't roast competitors by name`.
 
 ## Tone
 
