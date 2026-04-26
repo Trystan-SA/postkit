@@ -1,6 +1,6 @@
 {
   "name": "postkit",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Scaffold a Claude-Code-native social-media post workspace — skills for brand setup, drafting, reviewing, and rendering HTML/CSS carousels to PNG.",
   "type": "module",
   "bin": {
