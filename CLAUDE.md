@@ -28,14 +28,15 @@ src/
   formats.js                         Aspect-ratio → pixel dimensions
 templates/project/                   Scaffolded verbatim into user's ./postkit/
   .claude/skills/
-    postkit-setup/SKILL.md           Brand intake → saves brand_*.md to Claude memory + updates theme.css
-    postkit-idea/SKILL.md            Creative brainstorm + sequence plan → saves post_ideas.md memory
+    postkit-setup/SKILL.md           Brand intake → saves memory/brand_*.md + updates theme.css
+    postkit-idea/SKILL.md            Creative brainstorm + sequence plan → saves memory/post_ideas.md
     postkit-new/SKILL.md             Draft one post or a series
     postkit-render/SKILL.md          Shells out to `npx postkit render`
     postkit-review/SKILL.md          Strategy + copy + design critique
   theme.css                          Default design system
   CLAUDE.md                          Guide used by Claude inside user's workspace
   gitignore                          Renamed to .gitignore on copy
+  (memory/)                          Brand profile lives here at runtime — created by scaffolder, populated by /postkit-setup
 examples/
   quickstart/                        Committed reference post, smoke-test fixture
 ```
@@ -59,9 +60,9 @@ When a user re-runs `npx postkit`:
 
 - **Managed** (always overwritten): `.claude/skills/*`
 - **User-owned** (kept if present, created if missing): `theme.css`, `CLAUDE.md`, `.gitignore`
-- **Lives outside the project tree** (Claude Code manages it): the per-workspace
-  memory directory where `/postkit-setup` persists the brand profile
-- **Always ensured to exist**: `posts/`, `assets/` (with `.gitkeep`)
+- **Always ensured to exist**: `posts/`, `assets/`, `memory/` (each with `.gitkeep`)
+- **Brand state**: lives in `memory/brand_*.md` at the project root,
+  populated by `/postkit-setup`. It's user-owned content — never overwritten.
 
 If you add a new template file, decide which bucket it belongs in and wire it
 into `src/scaffold.js` accordingly. Never silently overwrite user content.

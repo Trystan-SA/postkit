@@ -84,7 +84,7 @@ export async function scaffold({ cwd = process.cwd() } = {}) {
   }
 
   // Empty dirs the skills expect
-  for (const dir of ["posts", "assets"]) {
+  for (const dir of ["posts", "assets", "memory"]) {
     await ensureDir(join(target, dir), target);
   }
 
@@ -99,8 +99,8 @@ Done. Next:
 `);
   } else {
     console.log(`
-Skills refreshed. Your theme.css, CLAUDE.md, and posts were left alone.
-Brand profile stays in Claude Code memory.
+Skills refreshed. Your theme.css, CLAUDE.md, posts, and memory/ were left alone.
+Brand profile lives in memory/ as plain Markdown files.
 `);
   }
 }

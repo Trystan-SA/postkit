@@ -1,6 +1,6 @@
 ---
 name: postkit-idea
-description: Generate high-creativity post ideas grounded in the user's brand memory, then plan a resonant sequence of 2–4 follow-up posts so the first idea becomes a thread instead of a one-off. Use when the user says they're stuck, wants ideas, wants to plan a week/month of content, wants a series, or asks "what should I post about?". Run this before /postkit-new when the user doesn't already know what they want to say.
+description: Generate high-creativity post ideas grounded in the user's brand profile (memory/brand_*.md), then plan a resonant sequence of 2–4 follow-up posts so the first idea becomes a thread instead of a one-off. Use when the user says they're stuck, wants ideas, wants to plan a week/month of content, wants a series, or asks "what should I post about?". Run this before /postkit-new when the user doesn't already know what they want to say.
 ---
 
 # /postkit-idea — divergent brainstorm + sequence planning
@@ -14,11 +14,12 @@ brief per idea: **hook, angle, arc, why it fits, suggested format**.
 
 ## Before you brainstorm
 
-1. **Load the brand profile from memory.** Read every `brand_*.md` file
-   (`identity`, `audience`, `goals`, `voice`, `visual`, `hooks`). If any are
-   missing, stop and send the user to `/postkit-setup` first. Creativity
-   without constraints turns generic fast.
-2. **Read `post_ideas.md` memory (if it exists) and scan `posts/`.** You need
+1. **Load the brand profile from `memory/`.** Read every `memory/brand_*.md`
+   file (`identity`, `audience`, `goals`, `voice`, `visual`, `hooks`). If
+   any are missing, stop and send the user to `/postkit-setup` first.
+   Creativity without constraints turns generic fast. Don't read brand
+   state from Claude Code internal memory.
+2. **Read `memory/post_ideas.md` (if it exists) and scan `posts/`.** You need
    to know what's already been explored so you don't repeat. New ideas should
    pattern-break from recent ones.
 3. **Take the seed.** Ask the user one short question: *"What's on your mind
@@ -104,10 +105,10 @@ times in a row. Alternate pace: long educational post → short emotional post
 Consider platform cadence from `brand_goals.md`. If the user posts 3×/week on
 Instagram, a 4-post sequence is a ~9-day campaign — mention that framing.
 
-## Save to memory
+## Save the sequence
 
-After the user confirms the sequence, append it to the `post_ideas.md`
-memory file (create it if it doesn't exist; type: `project`). Entry shape:
+After the user confirms the sequence, append it to `memory/post_ideas.md`
+at the project root (create it if it doesn't exist). Entry shape:
 
 ```markdown
 ## <today's date> — <sequence name>
@@ -119,9 +120,9 @@ Sequence pattern: <which pattern>
 ```
 
 Update existing entries when the user later drafts a post via `/postkit-new`
-— flip status from `idea` to `drafted`. Don't let this memory grow
-unbounded; when entries are older than ~60 days and fully drafted, compress
-them into a one-line archive entry.
+— flip status from `idea` to `drafted`. Don't let this file grow unbounded;
+when entries are older than ~60 days and fully drafted, compress them into
+a one-line archive entry.
 
 ## Handoff
 
@@ -129,7 +130,7 @@ After saving, offer the user three paths:
 
 1. Run `/postkit-new` now with the anchor idea as the brief.
 2. Run `/postkit-new` with a different post in the sequence.
-3. Park the sequence and come back later — everything's in memory.
+3. Park the sequence and come back later — everything's in `memory/post_ideas.md`.
 
 ## Creativity guardrails
 
@@ -150,6 +151,8 @@ After saving, offer the user three paths:
 
 - Don't create `posts/<slug>/` folders here. That's `/postkit-new`.
 - Don't edit `theme.css` or any slide HTML.
-- Don't write ideas into a project-root `.md` file — use the memory system.
-- If the user's brand memory is thin (lots of `_(TBD)_`), say so and ask
-  whether to infer gaps for this brainstorm or pause for `/postkit-setup`.
+- Don't write ideas into Claude Code's internal memory system. Sequences
+  belong in `memory/post_ideas.md` so they're versioned with the project.
+- If the user's brand profile is thin (lots of `_(TBD)_` in `memory/brand_*.md`),
+  say so and ask whether to infer gaps for this brainstorm or pause for
+  `/postkit-setup`.

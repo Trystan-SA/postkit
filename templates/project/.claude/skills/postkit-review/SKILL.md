@@ -1,6 +1,6 @@
 ---
 name: postkit-review
-description: Critique a draft post against the brand profile (Claude Code memory) and theme.css across three lenses — strategy (hook, angle, value arc), copy (CTA, word economy, tone), and design (layout, density, rhythm, typography). Returns HIGH/MEDIUM/LOW findings. Use when the user asks to review, critique, polish, or improve a draft before rendering.
+description: Critique a draft post against the brand profile (memory/brand_*.md) and theme.css across three lenses — strategy (hook, angle, value arc), copy (CTA, word economy, tone), and design (layout, density, rhythm, typography). Returns HIGH/MEDIUM/LOW findings. Use when the user asks to review, critique, polish, or improve a draft before rendering.
 ---
 
 # /postkit-review — three-lens critique
@@ -16,15 +16,29 @@ apply them.
 
 1. The target post folder (default: most recently modified `posts/<slug>/`).
    If ambiguous, ask.
-2. **The brand profile in memory** — read every `brand_*.md` file:
-   `brand_identity.md`, `brand_audience.md`, `brand_goals.md`, `brand_voice.md`,
-   `brand_visual.md`, `brand_hooks.md`. If any are missing, stop and send the
-   user to `/postkit-setup`.
+2. **The brand profile in `memory/`** — read every `memory/brand_*.md` file
+   at the project root: `brand_identity.md`, `brand_audience.md`,
+   `brand_goals.md`, `brand_voice.md`, `brand_visual.md`, `brand_hooks.md`.
+   If any are missing, stop and send the user to `/postkit-setup`. Don't
+   read brand state from Claude Code internal memory.
 3. `theme.css` at the project root — palette, tokens, component classes.
 4. Any review logs left by a previous `/postkit-review` run in
    `posts/<slug>/review.md` — don't repeat findings the user already addressed.
 
-Read all three slide files plus `post.json` before forming opinions.
+Read all slide files, `post.json`, and **every `caption*.md` file** in the
+post folder before forming opinions. Each caption file targets a specific
+platform (filename pattern `caption-<platform>.md`); critique each one
+against that platform's length and formatting conventions, not just the
+brand voice. Flag a caption that ignores its platform's norms (e.g. a
+LinkedIn-length caption saved as `caption-x.md`, or hashtag spam on
+LinkedIn) as HIGH.
+
+**Alt text check.** Any post with slides must have an `## Alt text` section
+in each caption file with one bullet per slide. Flag missing alt text as
+HIGH (accessibility regression). Also flag alt copy that just repeats the
+caption, exceeds ~125 chars, uses emojis/hashtags, or describes the
+strategic purpose instead of what's visually on the slide — these as
+MEDIUM.
 
 ## Three lenses, one pass
 
